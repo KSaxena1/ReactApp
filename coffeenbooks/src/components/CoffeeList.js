@@ -3,7 +3,7 @@ import React from "react";
 const CoffeeList = () => {
   return (
     <div className="card">
-      <div className="card-header">Coffee List</div>
+      <div className="card-header text-center">Coffee List</div>
       <div className="card-body">
         <h5 className="card-title">Special title treatment</h5>
         <p className="card-text">

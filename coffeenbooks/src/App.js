@@ -10,7 +10,7 @@ import RecentOrders from "./components/RecentOrders";
 const App = () => {
   return (
     <div className="container">
-      <div className="row">
+      <div className="row border">
         <div className="col-md-8 bg-light">
           <CoffeeList />
           <BookList />
@@ -19,15 +19,15 @@ const App = () => {
           <CheckOut />
         </div>
       </div>
-      <div className="row">
-        <div className="col-md bg-light">
+      <div className="row border">
+        <div className="col-md-8 bg-light">
+          <RecentOrders />
+        </div>
+        <div className="col-md-2 bg-light">
           <CoffeeSales />
         </div>
-        <div className="col-md bg-light">
+        <div className="col-md-2 bg-light">
           <BookSales />
-        </div>
-        <div className="col-md bg-light">
-          <RecentOrders />
         </div>
       </div>
     </div>
