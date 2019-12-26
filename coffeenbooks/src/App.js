@@ -23,11 +23,11 @@ const App = () => {
         <div className="col-md-8 bg-light">
           <RecentOrders />
         </div>
-        <div className="col-md-2 bg-light">
-          <CoffeeSales />
-        </div>
-        <div className="col-md-2 bg-light">
-          <BookSales />
+        <div className="col-md-4 bg-light">
+          <div className="card-group">
+            <CoffeeSales />
+            <BookSales />
+          </div>
         </div>
       </div>
     </div>
