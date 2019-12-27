@@ -15,7 +15,7 @@ const CoffeeList = () => {
     <div className="card">
       <div className="card-header text-center">Coffee List</div>
       <div className="card-body">
-        <table className="table table-bordered">
+        <table className="table table-bordered table-sm text-center">
           <thead className="thead-light">
             <tr>
               <th scope="col">Flavor</th>
@@ -31,6 +31,11 @@ const CoffeeList = () => {
                     <td>{item.coffeeName}</td>
                     <td>{item.qtyAvailForCups}</td>
                     <td>{item.pricePerCup}</td>
+                    <td>
+                      <button type="button" class="btn btn-secondary btn-sm">
+                        Add to cart
+                      </button>
+                    </td>
                   </tr>
                 ))
               : null}

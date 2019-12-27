@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CheckOut = () => {
+  const [checkOutList, setCheckOutList] = useState(0);
+
   return (
     <div className="card">
       <div className="card-header text-center">Check Out</div>
       <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
-        <p className="card-text">
-          With supporting text below as a natural lead-in to additional content.
-        </p>
-        <a href="#" className="btn btn-primary">
-          Go somewhere
-        </a>
+        <table className="table table-bordered table-sm text-center">
+          <thead className="thead-light">
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
   );

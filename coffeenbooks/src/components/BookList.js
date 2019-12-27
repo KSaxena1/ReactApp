@@ -15,7 +15,7 @@ const BookList = () => {
     <div className="card">
       <div className="card-header text-center">Book List</div>
       <div className="card-body">
-        <table className="table table-bordered">
+        <table className="table table-bordered table-sm text-center">
           <thead className="thead-light">
             <tr>
               <th scope="col">Title</th>
@@ -33,6 +33,11 @@ const BookList = () => {
                     <td>{item.author}</td>
                     <td>{item.qtyAtHand}</td>
                     <td>{item.Price}</td>
+                    <td>
+                      <button type="button" class="btn btn-secondary btn-sm">
+                        Add to cart
+                      </button>
+                    </td>
                   </tr>
                 ))
               : null}

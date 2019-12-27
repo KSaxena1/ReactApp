@@ -11,11 +11,11 @@ const App = () => {
   return (
     <div className="container">
       <div className="row border">
-        <div className="col-md-8 bg-light">
+        <div className="col-md-7 bg-light">
           <CoffeeList />
           <BookList />
         </div>
-        <div className="col-md-4 bg-light">
+        <div className="col-md-5 bg-light">
           <CheckOut />
         </div>
       </div>
