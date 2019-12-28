@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const CoffeeList = () => {
+const CoffeeList = props => {
   const [coffeeList, setCoffeeList] = useState(0);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const CoffeeList = () => {
       .then(res => {
         setCoffeeList(res);
       });
-  });
+  }, []);
 
   return (
     <div className="card">
@@ -21,7 +21,7 @@ const CoffeeList = () => {
               <th scope="col">Flavor</th>
               <th scope="col">Available qty</th>
               <th scope="col">Price/Cup</th>
-              <th scope="col">Add to Cart</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -31,9 +31,19 @@ const CoffeeList = () => {
                     <td>{item.coffeeName}</td>
                     <td>{item.qtyAvailForCups}</td>
                     <td>{item.pricePerCup}</td>
-                    <td>
-                      <button type="button" class="btn btn-secondary btn-sm">
-                        Add to cart
+                    <td
+                      onClick={() => {
+                        const data = {
+                          id: item.coffeeId,
+                          product: `${item.coffeeName}`,
+                          qty: 1,
+                          price: item.pricePerCup
+                        };
+                        props.addCOutData(data);
+                      }}
+                    >
+                      <button className="btn btn-sm btn-outline-secondary">
+                        Add to Cart
                       </button>
                     </td>
                   </tr>

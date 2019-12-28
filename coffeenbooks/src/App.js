@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import CoffeeList from "./components/CoffeeList";
 import BookList from "./components/BookList";
@@ -6,18 +6,29 @@ import CheckOut from "./components/CheckOut";
 import CoffeeSales from "./components/CoffeeSales";
 import BookSales from "./components/BookSales";
 import RecentOrders from "./components/RecentOrders";
+import { CheckOutProvider } from "./components/checkOutContext";
 
 const App = () => {
+  const coutdata = [];
+
+  const [checkOutData, setcheckOutData] = useState(coutdata);
+
+  const addCOutData = data => {
+    setcheckOutData([...checkOutData, data]);
+  };
+
   return (
     <div className="container">
       <div className="row border">
         <div className="col-md-7 bg-light">
-          <CoffeeList />
-          <BookList />
+          <CoffeeList addCOutData={addCOutData} />
+          <BookList addCOutData={addCOutData} />
         </div>
-        <div className="col-md-5 bg-light">
-          <CheckOut />
-        </div>
+        <CheckOutProvider value={checkOutData}>
+          <div className="col-md-5 bg-light">
+            <CheckOut />
+          </div>
+        </CheckOutProvider>
       </div>
       <div className="row border">
         <div className="col-md-8 bg-light">

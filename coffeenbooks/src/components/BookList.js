@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const BookList = () => {
+const BookList = props => {
   const [bookList, setBookList] = useState(0);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const BookList = () => {
       .then(res => {
         setBookList(res);
       });
-  });
+  }, []);
 
   return (
     <div className="card">
@@ -33,9 +33,19 @@ const BookList = () => {
                     <td>{item.author}</td>
                     <td>{item.qtyAtHand}</td>
                     <td>{item.Price}</td>
-                    <td>
-                      <button type="button" class="btn btn-secondary btn-sm">
-                        Add to cart
+                    <td
+                      onClick={() => {
+                        const data = {
+                          id: item.bookId,
+                          product: `${item.title}`,
+                          qty: 1,
+                          price: item.Price
+                        };
+                        props.addCOutData(data);
+                      }}
+                    >
+                      <button className="btn btn-sm btn-outline-secondary">
+                        Add to Cart
                       </button>
                     </td>
                   </tr>
