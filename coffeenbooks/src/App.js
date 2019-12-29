@@ -17,6 +17,11 @@ const App = () => {
     setcheckOutData([...checkOutData, data]);
   };
 
+  const resetCOutData = () => {
+    console.log("data Reset");
+    setcheckOutData(coutdata);
+  };
+
   return (
     <div className="container">
       <div className="row border">
@@ -26,7 +31,7 @@ const App = () => {
         </div>
         <CheckOutProvider value={checkOutData}>
           <div className="col-md-5 bg-light">
-            <CheckOut />
+            <CheckOut resetCOutData={resetCOutData} />
           </div>
         </CheckOutProvider>
       </div>

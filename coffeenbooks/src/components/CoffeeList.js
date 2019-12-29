@@ -43,7 +43,7 @@ const CoffeeList = props => {
                       }}
                     >
                       <button className="btn btn-sm btn-outline-secondary">
-                        Add to Cart
+                        Add
                       </button>
                     </td>
                   </tr>
