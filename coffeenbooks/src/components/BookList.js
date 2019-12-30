@@ -14,7 +14,7 @@ const BookList = props => {
   return (
     <div className="card">
       <div className="card-header text-center">Book List</div>
-      <div className="card-body">
+      <div className="card-body prodScroll">
         <table className="table table-bordered table-sm text-center">
           <thead className="thead-light">
             <tr>
@@ -22,7 +22,7 @@ const BookList = props => {
               <th scope="col">Author</th>
               <th scope="col">qty</th>
               <th scope="col">Price</th>
-              <th scope="col">Add to Cart</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>

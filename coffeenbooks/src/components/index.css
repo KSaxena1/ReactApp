@@ -1,0 +1,9 @@
+.tabScroll {
+  height: 350px;
+  overflow-y: scroll;
+}
+
+.prodScroll {
+  height: 300px;
+  overflow-y: scroll;
+}

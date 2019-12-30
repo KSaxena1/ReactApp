@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import checkOutContext from "./checkOutContext";
+import "./index.css";
 
 const CheckOut = props => {
   const checkOutdata = useContext(checkOutContext);
@@ -68,8 +69,8 @@ const CheckOut = props => {
     <form onSubmit={handleOnSubmit}>
       <div className="card">
         <div className="card-header text-center">Check Out</div>
-        <div className="card-body">
-          <table className="table table-bordered table-sm text-center">
+        <div className="card-body tabScroll">
+          <table className="table table-bordered table-sm text-center ">
             <thead className="thead-light">
               <tr>
                 <th scope="col">Item</th>
@@ -89,6 +90,8 @@ const CheckOut = props => {
                 : null}
             </tbody>
           </table>
+        </div>
+        <footer className="card-footer">
           <table className="table table-bordered table-sm text-center text-sm">
             <tbody>
               <tr key="taxtotalt">
@@ -126,7 +129,7 @@ const CheckOut = props => {
               </button>
             </div>
           </div>
-        </div>
+        </footer>
       </div>
     </form>
   );

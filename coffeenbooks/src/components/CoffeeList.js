@@ -14,7 +14,7 @@ const CoffeeList = props => {
   return (
     <div className="card">
       <div className="card-header text-center">Coffee List</div>
-      <div className="card-body">
+      <div className="card-body prodScroll">
         <table className="table table-bordered table-sm text-center">
           <thead className="thead-light">
             <tr>
